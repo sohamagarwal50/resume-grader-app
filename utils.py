@@ -6,7 +6,8 @@ from langgraph.checkpoint.memory import MemorySaver
 from pydantic.v1 import BaseModel, Field
 from typing_extensions import TypedDict
 import os
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyBmcncJHrridgEpgCuqHLf-qG32khQgLGE'
+import streamlit as st
+os.environ['GOOGLE_API_KEY'] = st.secrets["GOOGLE_API_KEY"]
 # LLM setup
 llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash', temperature=0.0)
 
